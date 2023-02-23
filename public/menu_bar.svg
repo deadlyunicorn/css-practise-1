@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100.00011mm"
+   height="99.999992mm"
+   viewBox="0 0 100.00011 99.999992"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="menu_shape.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     showguides="false"
+     inkscape:zoom="1.0243"
+     inkscape:cx="200.62482"
+     inkscape:cy="138.63126"
+     inkscape:window-width="843"
+     inkscape:window-height="1021"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     inkscape:lockguides="false">
+    <sodipodi:guide
+       position="-54.244953,225.96729"
+       orientation="0,-1"
+       id="guide59"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.999944,-98.500005)">
+    <g
+       id="g935"
+       transform="translate(-3.4790075,98.5)"
+       style="fill:#ffffff">
+      <path
+         style="fill:#ffffff;stroke-width:0.293662"
+         d="m 58.478955,80 v 20 H 158.47906 V 80 Z"
+         id="path919" />
+      <path
+         style="fill:#ffffff;stroke-width:0.293662"
+         d="M 58.478955,40 V 60 H 158.47906 V 40 Z"
+         id="path917" />
+      <path
+         style="fill:#ffffff;stroke-width:0.293662"
+         d="M 58.478955,0 V 20 H 158.47906 V 0 Z"
+         id="rect217" />
+    </g>
+  </g>
+</svg>
