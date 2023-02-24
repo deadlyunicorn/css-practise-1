@@ -1,14 +1,22 @@
 'use client'
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import NavigationBar from "../components/navbar";
 
 export default function TestMe(){
 
 
+
+
+
   return(
     <>
-      <div className="border p-2 rounded-lg flex flex-col items-center w-44">
+
+      <NavigationBar page="Framer" />
+      <div 
+        className='flex flex-col justify-center items-center pt-14'>
+        <div className="border p-2 rounded-lg flex flex-col items-center w-44">
 
           <BlackHole/>
 
@@ -33,16 +41,16 @@ export default function TestMe(){
                                     <div className="border-b w-full my-2"></div>
                                     then i realized it's paid content:(
                                     */}
-          <Separator/>
+            <Separator/>
 
-          <MagicSwitch/>
-          
-          <Separator/>
+            <MagicSwitch/>
+            
+            <Separator/>
 
-          <SelectedButton/>
+            <SelectedButton/>
           
-          
-      </div>
+          </div>
+        </div>
     </>
 
   )
@@ -134,24 +142,35 @@ const MagicSwitch = () =>{
 }
 
 const SelectedButton = () =>{
-//useStates
+  
+  const [switch1,activateSwitch1]=useState(false);
+  const [switch2,activateSwitch2]=useState(false);
 
-return(
-  <div className="flex border rounded-xl ">
-
-    <motion.button className="px-2 py-1  "
-    layout
-    onClick={()=>{
-      //states
-    }}
+  useEffect(()=>{
     
-    >
-      hi1
-    </motion.button>
-    <button className="px-2 py-1  ">
-      hi2
-    </button>
-  </div>
-)
+    if (switch1){
+      activateSwitch1(true)
+    } 
+    if (switch2){
+      activateSwitch1
+    }
+  },[switch1,switch2]);
+
+  return(
+    <div className="flex border rounded-xl ">
+
+      <motion.button className="px-2 py-1  "
+      layout
+      onClick={()=>{
+        //states
+      }}
+      >
+        hi1
+      </motion.button>
+      <button className="px-2 py-1  ">
+        hi2
+      </button>
+    </div>
+  )
 
 }
