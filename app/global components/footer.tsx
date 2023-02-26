@@ -1,5 +1,7 @@
+
 import Link from "next/link";
 import { ReactNode } from 'react'
+import FooterListItem from './motionFooter'
 
 
 
@@ -77,16 +79,13 @@ const FooterBody = () =>(
 
 export default FooterBody;
 
-const FooterListItem = (props:{content:string}) => (
-  <li className='hover:text-white w-fit text-sm'><a href="#">{props.content}</a></li>
 
-)
 
 const FooterListHeading = (props:{
   children: ReactNode,
   title:string
 }) => (
-  <div className='p-2 cursor-default'>
+  <div className='p-2 cursor-default text-white'>
     {props.title}
   <ul className='flex flex-col mt-4 gap-1 text-gray-500 w-fit '>
     {props.children}
