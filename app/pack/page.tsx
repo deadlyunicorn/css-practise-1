@@ -1,5 +1,5 @@
-import LoreumBody from "../components/loreum"
-import NavigationBar from "../components/navbar"
+import LoreumBody from "../global components/loreum"
+import NavigationBar from "../global components/navbar"
 
 export default function Home() {
   return (

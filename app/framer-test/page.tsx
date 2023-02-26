@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState,useEffect } from "react";
-import NavigationBar from "../components/navbar";
+import NavigationBar from "../global components/navbar";
 
 export default function TestMe(){
 
@@ -15,7 +15,7 @@ export default function TestMe(){
 
       <NavigationBar page="Framer" />
       <div 
-        className='flex flex-col justify-center items-center pt-14'>
+        className='flex flex-col justify-center items-center pt-14 text-white'>
         <div className="border p-2 rounded-lg flex flex-col items-center w-44">
 
           <BlackHole/>

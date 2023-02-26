@@ -1,12 +1,12 @@
 import './globals.css'
-import FooterBody from './components/footer'
+import FooterBody from './global components/footer'
 
 //const garamond = EB_Garamond({ subsets: ['latin'],weight:'400' })
 
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en">
+    <html lang="en" className='bg-black text-white'>
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
