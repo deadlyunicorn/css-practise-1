@@ -51,7 +51,11 @@ export default function TestMe(){
 
             <Separator/>
                                     
-            <NewElement/>
+            <DraggableElement/>
+
+            <Separator/>
+
+            <VariantsMotion/>
           </div>
         </div>
     </>
@@ -152,10 +156,11 @@ const SelectedButton = () =>{
 
 
   return(
-    <div className="flex border rounded-xl ">
+    <div className="flex border rounded-xl">
       
       <div>
 
+        
       <motion.div 
         data-switch={switch1} //based on the useState we get the position of the background (flex start or end)
         //I couldn't make it not be a seperate bg from the button elements. I initially had in mind changnig the bg
@@ -163,15 +168,15 @@ const SelectedButton = () =>{
         // maybe if I could animate the position of the background only (and not text)
         // I could achieve a similar effect by starting the bg offset towards the other button
         
-        className="absolute w-20 h-9 flex data-[switch=hi2]:justify-end data-[switch=hi1]:justify-start -z-10"
+        className="w-20 h-0 flex data-[switch=hi2]:justify-end data-[switch=hi1]:justify-start "
         transition={{type:spring}}>
-          <motion.div layout className="bg-gray-500 w-10 h-8 rounded-lg "/>
+          <motion.div layout className="bg-neutral-800 w-10 h-8 rounded-xl -z-10 "/>
         </motion.div>
 
         
         <button
         data-switch={switch1}
-        className="px-2 py-1  rounded-xl " //data-[switch=hi1]:bg-neutral-400 didn't manage to make it work
+        className="px-2 py-1  rounded-xl" //data-[switch=hi1]:bg-neutral-400 didn't manage to make it work
         onClick={()=>{activateSwitch1("hi1")}}
         >
           hi1
@@ -185,23 +190,64 @@ const SelectedButton = () =>{
         >
           hi2
         </button>
+
+
       </div>
+
+      
     </div>
   )
 
 }
 
-const NewElement = () =>{
+const DraggableElement = () =>{
   return(
     <>
 
-      <motion.div
+      <motion.button
       className="border rounded-lg p-1 px-2 bg-gradient-to-b from-purple-900 to-black"
       drag={true}
       dragConstraints={{left:-17,right:17,top:-9,bottom:9}}
       >
         this is draggable
-      </motion.div>
+      </motion.button>
+    </>
+  )
+}
+
+const VariantsMotion = () => {
+
+  const container = {
+    hidden:{opacity:1,scale:0},
+    visible:{
+      opacity:1,
+      scale:1,
+      transition: {
+        delayChildren:0.3,
+        staggerChildren: 0.2  
+      }
+
+    }
+  }
+  const item ={
+    hidden: {y:20, opacity:0},
+    visible: {y:0, opacity:1}
+  }
+
+  return(
+    <>
+      <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      className="h-14 w-14 border-2 border-white rounded-lg grid grid-cols-2 gap-1 place-items-center bg-gray-900"
+      >
+        {[0,1,2,3].map(index=>(
+          <motion.div key="item" 
+          className="h-5 w-5 border  bg-white rounded-full  "
+          variants={item}/>
+          ))}
+      </motion.div>    
     </>
   )
 }
