@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import { useState,useEffect } from "react";
 import NavigationBar from "../global components/navbar";
 
@@ -48,7 +48,10 @@ export default function TestMe(){
             <Separator/>
 
             <SelectedButton/>
-          
+
+            <Separator/>
+                                    
+            <NewElement/>
           </div>
         </div>
     </>
@@ -143,34 +146,62 @@ const MagicSwitch = () =>{
 
 const SelectedButton = () =>{
   
-  const [switch1,activateSwitch1]=useState(false);
-  const [switch2,activateSwitch2]=useState(false);
 
-  useEffect(()=>{
-    
-    if (switch1){
-      activateSwitch1(true)
-    } 
-    if (switch2){
-      activateSwitch1
-    }
-  },[switch1,switch2]);
+  const [switch1,activateSwitch1]=useState("homepage");
+  //plus also make on each button click redirect to said page.
+
 
   return(
     <div className="flex border rounded-xl ">
+      
+      <div>
 
-      <motion.button className="px-2 py-1  "
-      layout
-      onClick={()=>{
-        //states
-      }}
-      >
-        hi1
-      </motion.button>
-      <button className="px-2 py-1  ">
-        hi2
-      </button>
+      <motion.div 
+        data-switch={switch1} //based on the useState we get the position of the background (flex start or end)
+        //I couldn't make it not be a seperate bg from the button elements. I initially had in mind changnig the bg
+        // of each button element on the corresponding click, but I couldn't animate it that way..
+        // maybe if I could animate the position of the background only (and not text)
+        // I could achieve a similar effect by starting the bg offset towards the other button
+        
+        className="absolute w-20 h-9 flex data-[switch=hi2]:justify-end data-[switch=hi1]:justify-start -z-10"
+        transition={{type:spring}}>
+          <motion.div layout className="bg-gray-500 w-10 h-8 rounded-lg "/>
+        </motion.div>
+
+        
+        <button
+        data-switch={switch1}
+        className="px-2 py-1  rounded-xl " //data-[switch=hi1]:bg-neutral-400 didn't manage to make it work
+        onClick={()=>{activateSwitch1("hi1")}}
+        >
+          hi1
+        </button>
+
+
+        <button 
+        data-switch={switch1}
+        className="px-2 py-1  rounded-xl" //data-[switch=hi2]:bg-neutral-400
+        onClick={()=>{activateSwitch1("hi2")}}
+        >
+          hi2
+        </button>
+      </div>
     </div>
   )
 
+}
+
+const NewElement = () =>{
+  return(
+    <>
+
+      <motion.div
+      className="border rounded-lg p-1 px-2 bg-gradient-to-b from-purple-900 to-black"
+      drag={true}
+      dragConstraints={{left:-17,right:17,top:-9,bottom:9}}
+      >
+        this is draggable
+      </motion.div>
+    </>
+  )
 }
