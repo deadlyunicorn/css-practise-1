@@ -1,0 +1,7 @@
+.contentDisplay::before {
+  content: attr(data-customContent);
+}
+
+.titleDisplay::before{
+  content: attr(data-title);
+}
