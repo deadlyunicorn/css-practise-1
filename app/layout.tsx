@@ -20,7 +20,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </main>
         
         <footer 
-          className='border-t border-gray-700 mt-5  gap-y-10 pt-10 pb-20 px-8 xl:px-20 '>
+          className='border-t border-gray-700   gap-y-10 pt-10 pb-20 px-8 xl:px-20 '>
           <FooterBody/>
         </footer>
           
