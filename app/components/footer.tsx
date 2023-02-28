@@ -72,7 +72,7 @@ const FooterBody = () =>(
       </span>
       <Link href="/" className='hover:text-white indent-4'>Homepage</Link>
       <Link href="/framer-test" className='hover:text-white indent-4'>Framer Examples</Link>
-      
+      <Link href="/login-ui" className='hover:text-white indent-4'>Random login UI</Link>
     </div>
   </>
 )

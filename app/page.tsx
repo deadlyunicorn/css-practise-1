@@ -1,6 +1,5 @@
-import { EB_Garamond } from '@next/font/google'
-import NavigationBar from './global components/navbar'
-import LoreumBody from './global components/loreum'
+import NavigationBar from '@/app/components/navbar'
+import LoreumBody from '@/app/components/loreum'
 
 
 export default function Home() {

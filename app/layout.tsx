@@ -1,5 +1,5 @@
 import './globals.css'
-import FooterBody from './global components/footer'
+import FooterBody from '@/app/components/footer'
 
 //const garamond = EB_Garamond({ subsets: ['latin'],weight:'400' })
 

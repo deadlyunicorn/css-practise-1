@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import PageSelect from "./navbareffect";
+import PageSelect from "@/app/components/navbareffect";
 
 const NavigationBar = (props:{page:string}) => (
   <nav className='flex justify-around items-center h-16 border-b border-gray-700 bg-black'>

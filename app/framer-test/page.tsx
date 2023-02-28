@@ -1,8 +1,8 @@
 'use client'
 
 import { motion, spring } from "framer-motion";
-import { useState,useEffect } from "react";
-import NavigationBar from "../global components/navbar";
+import { useState } from "react";
+import NavigationBar from "@/app/components/navbar";
 
 export default function TestMe(){
 
