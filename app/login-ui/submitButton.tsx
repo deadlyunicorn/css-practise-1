@@ -20,27 +20,36 @@ const SubmitButt=()=>{
         animate={{opacity:1,scale:1}}>
               
         <div className="my-8"> 
-          <motion.label
-            data-state={email}
-            className="
-            before:absolute 
-            before:-translate-y-0
-            before:h-10 before:w-10
-            text-md
-            data-[state=true]:before:-translate-y-6
-            before:content-['Email']
-            before:-z-10
-          "
-          transition={{type:"spring"}}
+          <motion.div
+          data-state={email}
+          //absolute -> to not prevent it from being clickable
+          className="
+          flex
+          absolute
+          translate-y-2
+          data-[state=true]:-translate-y-8
+          -z-10
+          ">
 
-          />
+            <motion.label
+              layout
+              data-state={email}
+              className="
+              before:absolute 
+              before:h-10 before:w-10
+              text-md
+              before:content-['Email']
+              before:-z-10
+              "
+            />
+          </motion.div>
+
           <input required type={"email"} 
-            onClick={()=>{setMail(!email)}}
+            onClick={()=>{setMail(true)}}
             className="text-white placeholder:text-gray-200 h-10 rounded-sm bg-transparent border-b-2"/>
 
           <label
-            data-state={email}
-            className="before:absolute before:-translate-x-10 before:pt-1 before:h-10 before:w-10 text-xl"/>
+            className="before:absolute before:-translate-x-10 before:pt-1 before:h-10 before:w-10 text-xl before:content-['📮']"/>
         </div>
 
       </motion.div>
@@ -50,25 +59,36 @@ const SubmitButt=()=>{
         animate={{opacity:1,scale:1}}>
         
         <div className="my-8"> 
-          <motion.label
-            data-state={pass}
-            className="
-            before:absolute 
-            before:-translate-y-0
-            before:h-10 before:w-10
-            text-md
-            data-[state=true]:before:-translate-y-6
-            before:content-['Password']
-            before:-z-10
-          "/>
+        <motion.div
+          data-state={pass}
+          //absolute -> to not prevent it from being clickable
+          className="
+          flex
+          absolute
+          translate-y-2
+          data-[state=true]:-translate-y-8
+          -z-10
+          ">
+
+            <motion.label
+              layout
+              data-state={email}
+              className="
+              before:absolute 
+              before:h-10 before:w-10
+              text-md
+              before:content-['Password']
+              before:-z-10
+              "
+            />
+          </motion.div>
           
           <input required type={"password"} 
             onClick={()=>{setPass(true)}}
             className="text-white placeholder:text-gray-200 h-10 rounded-sm bg-transparent border-b-2"/>
 
           <label
-            data-state={pass}
-            className="before:absolute before:-translate-x-10 before:pt-1 before:h-10 before:w-10 text-xl"/>
+            className="before:absolute before:-translate-x-10 before:pt-1 before:h-10 before:w-10 text-xl before:content-['🔒']"/>
         </div>
       </motion.div>
 
@@ -81,8 +101,32 @@ const SubmitButt=()=>{
         
         <button className="bg-white h-10 w-full mb-10 rounded-full text-black">Log In</button>
     </div>
-  
+
+
+
+    {/* Helped me debug... 
+    <motion.div
+      data-email={email}
+      className="
+      absolute 
+      data-[email=false]:translate-x-44 
+      data-[email=true]:translate-x-10 
+      border 
+      flex <--------------- SOS
+      w-fit"
+      transition={{type:"spring",duration:2, repeatType:"reverse"}}
+      
+      >
+      <motion.div
+      className="border-2"
+      layout
+      >
+
+      <motion.span layout>hello</motion.span>
+      </motion.div>
+    </motion.div> */}
   </form>
+  
 
 )}
 
