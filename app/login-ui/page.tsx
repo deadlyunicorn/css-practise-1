@@ -16,6 +16,7 @@ const UI = () => {
           </div>
         </div>
       </div>
+      <div className="absolute text-white right-5"><a href="https://www.freepik.com/free-vector/nature-scene-with-river-hills-forest-mountain-landscape-flat-cartoon-style-illustration_12953559.htm#query=illustrations&position=2&from_view=keyword&track=sph" className="text-blue-400 hover:text-blue-300">Image by jcomp</a> on Freepik</div>
     </>
   )
 
